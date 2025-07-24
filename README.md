@@ -46,24 +46,9 @@ This project was developed using [Cursor](https://www.cursor.so/), an AI-powered
 
 ## Architecture Diagram
 
-Below is the system architecture. To display as an image on GitHub, copy the Mermaid code to [https://mermaid.live/](https://mermaid.live/), export as PNG/SVG, and upload to your repo.
+Below is the system architecture. 
+<img width="3840" height="3341" alt="resort" src="https://github.com/user-attachments/assets/5258405b-f108-4022-a4d3-31cefc64c245" />
 
-```mermaid
-graph TD
-  UserWeb[User (Web)] -->|Books Room| WebUI[Web Frontend]
-  UserMobile[User (Mobile)] -->|Books Room| MobileUI[Mobile Frontend]
-  WebUI -->|API Calls| BackendAPI[Backend API]
-  MobileUI -->|API Calls| BackendAPI
-  BackendAPI -->|Reads/Writes| DB[(PostgreSQL DB)]
-  WebUI -->|Chat| WebChat[Web Chat UI]
-  MobileUI -->|Chat| MobileChat[Mobile Chat UI]
-  WebChat -->|Sends Message| LLMProxy[LLM API Proxy]
-  MobileChat -->|Sends Message| LLMProxy
-  LLMProxy -->|Forwards| LLM[OpenAI/LLM]
-  LLM -->|AI Response| LLMProxy
-  LLMProxy -->|AI Response| WebChat
-  LLMProxy -->|AI Response| MobileChat
-```
 
 ## How to Run
 
@@ -93,9 +78,4 @@ npm install
 npx expo start
 ```
 
-## About Cursor
-This project was built with the help of Cursor, an AI coding assistant that accelerates full-stack development, code review, and integration.
-
 ---
-
-**Enjoy your resort app!** 
